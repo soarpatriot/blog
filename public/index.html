@@ -29,7 +29,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="No dream is too big, no dreamer is too small.">
+  <link rel="alternate" href="/atom.xml" title="Soar">
 
 
 
@@ -75,12 +75,12 @@
 
 
 
-    <title> No dream is too big, no dreamer is too small. </title>
+    <title> Soar </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/." class="logo">No dream is too big, no dreamer is too small.</a>
+    <a href="/." class="logo">Soar</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -115,7 +115,7 @@
 
     <div class="container" id="mobile-panel">
       <header id="header" class="header"><div class="logo-wrapper">
-  <a href="/." class="logo">No dream is too big, no dreamer is too small.</a>
+  <a href="/." class="logo">Soar</a>
 </div>
 
 <nav class="site-navbar">
@@ -177,49 +177,14 @@
       
         
         
+          
+        
 
         
           <p>对于学习新编程语言，有人认为，所有的编程语言都是相通的，学会一种，其它的都不是问题。也有人说，你用别的语言写出的功能，我也能用我会的语言写出，没有必要新学一种。你是怎么想的？</p>
-<h2 id="ruby之旅"><a href="#ruby之旅" class="headerlink" title="ruby之旅"></a>ruby之旅</h2><p>认识ruby是从rails开始的，一开始就被它简洁风格所吸引。</p>
-<h3 id="惊叹于rails-的开发效率"><a href="#惊叹于rails-的开发效率" class="headerlink" title="惊叹于rails 的开发效率"></a>惊叹于rails 的开发效率</h3><p>rails是一个全功能的web开发框架，默认为你设置了web开发的基础，让你专心开发你的业务逻辑，例如,如下基础功能在其它语言的web开发中，好多都需要自己手工添加配置。</p>
-<ol>
-<li>log, cache,flash, validation等常用必备功能</li>
-<li>csrf和iframe 安全预防措施</li>
-<li>orm, unit test </li>
-<li>前端默认的scss, coffeescript 支持，dev 环境下分离，production环境下默认合并压缩。</li>
-</ol>
-<p>强大的命令行工具, 瞬间为你生成可用的简单REST CRUD, 你可能会由于一些之前的代码生成工具使用经历对代码生成工具产生偏见, 当你用过rails命令行工具生成代码后，你会感叹它的智能高效。（它甚至能做不规则英文单词单复数转换）<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ rails new shop</span><br><span class="line">$ rails g scaffold shop <span class="symbol">name:</span>string <span class="symbol">description:</span>text</span><br></pre></td></tr></table></figure></p>
-<p>丰富的内置功能，组合起来让开发更高效, 拿数据库操作举例，默认的数据库操作方法有上百个，已经能覆盖大部分情况，一般情况下不需要手写DAO, 如下这些只是简单功能，组合起来可以更清晰和方便。比hibernate清晰简单。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> &lt; ActiveRecord::Base</span></span><br><span class="line">  <span class="comment"># name, age, birth  </span></span><br><span class="line">  has_many <span class="symbol">:posts</span></span><br><span class="line">  validation <span class="symbol">:namge</span>, <span class="symbol">:age</span>, <span class="symbol">presence:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">published_posts</span> </span></span><br><span class="line">    <span class="keyword">self</span>.joins(posts).where(<span class="symbol">posts:</span> &#123;<span class="symbol">published:</span> <span class="literal">true</span>&#125;)</span><br><span class="line">  <span class="keyword">end</span> </span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">foo = User.create(<span class="symbol">name:</span> <span class="string">"foo"</span>, <span class="symbol">age:</span> <span class="number">20</span>) <span class="comment">#创建用户</span></span><br><span class="line">User.all <span class="comment"># 查找全部用户</span></span><br><span class="line">User.first <span class="comment"># 查找第一个用户</span></span><br><span class="line">User.published_posts  <span class="comment">#获取用户和用户已发表的文章</span></span><br></pre></td></tr></table></figure></p>
-<p>有其它web开发经验的朋友可根据官方教程尝试一下: <a href="http://guides.rubyonrails.org/" target="_blank" rel="noopener">Rails Guide</a></p>
-<h3 id="编程原来可以这么快乐"><a href="#编程原来可以这么快乐" class="headerlink" title="编程原来可以这么快乐"></a>编程原来可以这么快乐</h3><ol>
-<li>接近自然语言的简洁自由风格。</li>
-<li>丰富的gem, 好多功能已有前人做好，只需要拿来配置一下使用。 </li>
-<li>简短的语句就能完成丰富的功能。</li>
-</ol>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">user.save <span class="keyword">if</span> user.valid?  <span class="comment">#接近自然语言</span></span><br><span class="line">users.each&#123;<span class="params">|u|</span> u.created_at &lt; Date.yesterday&#125; <span class="comment">#通过组合，清晰的简短的完成功能表达。</span></span><br></pre></td></tr></table></figure>
-<h3 id="ruby-的开放精神"><a href="#ruby-的开放精神" class="headerlink" title="ruby 的开放精神"></a>ruby 的开放精神</h3><p>可能每个程序员都有一颗冲破束缚，追求自由的心，ruby让这种本性彻底释放</p>
-<ol>
-<li>你可以修改任何类，方法，包括自带的库。通常情况下我们不会考虑修改语言标准库函数，也或许认为没有必要。当你真的需要时，才能体会有和没有的区别。</li>
-<li>强大的元编程能力，让你拥有无限的魔法。</li>
-</ol>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#修改自带库的类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">String</span> </span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">reverse</span></span></span><br><span class="line">    <span class="string">"aa"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#元编程，添加不存在的方法</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> </span></span><br><span class="line">  </span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h3 id="ruby-社区成熟，gem-众多，功能强大"><a href="#ruby-社区成熟，gem-众多，功能强大" class="headerlink" title="ruby 社区成熟，gem 众多，功能强大"></a>ruby 社区成熟，gem 众多，功能强大</h3><p>由于强大的元编程和动态特性，ruby的gem 功能非常强大而且可高度定制。 </p>
-<ol>
-<li>devise</li>
-<li>sidekiq</li>
-<li>….</li>
-</ol>
-<h3 id="ruby-的挑战"><a href="#ruby-的挑战" class="headerlink" title="ruby 的挑战"></a>ruby 的挑战</h3><p>1.有一定的学习曲线,安装，配置, 学习api, 一旦掌握，威力巨大。<br>2.其它语言的的框架通过相互借鉴和进步，大大提升了开发效率。<br>2.语言本身的运行效率不高, rails一类的框架，不经过调优，运行效率不高。<br>3.对多线程的支持不够好。</p>
-<h3 id="那么有必要学习新的语言吗？"><a href="#那么有必要学习新的语言吗？" class="headerlink" title="那么有必要学习新的语言吗？"></a>那么有必要学习新的语言吗？</h3><ol>
-<li>在某些场景下只能用特定的语言，比如浏览器，只能是类javascript语言。</li>
-<li>不同的编程语言就像武器，想象一下吧，你拿着大刀的时候，对方端着机枪。</li>
-<li>尝试不同的语言，你会感受不同的编程风格。</li>
-<li>会多种语言，解决问题的可选项就会越多。</li>
-<li>语言排行榜上，流行java, c 是不是学他们就够了，特定问题生产率高的恰恰是小众语言。</li>
-<li>学习小众语言没有用武之地？当你需要用的时候，你就会感谢当初的你是明智的。 </li>
-<li>那为什么是ruby?  只是我选择了ruby<br>你可以选择你喜欢的动态语言。重要的是要学不同的语言。</li>
-</ol>
-
+          <div class="read-more">
+            <a href="/2017/10/16/why-i-learn-ruby/" class="read-more-link">阅读更多</a>
+          </div>
         
       
     </div>
@@ -236,7 +201,7 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2017/10/11/programm-key/">什么是最关键的?</a>
+          <a class="post-link" href="/2017/10/11/programm-key/">什么是程序开发最关键的因素?</a>
         
       </h1>
 
@@ -256,12 +221,14 @@
       
         
         
+          
+        
 
         
-          <h3 id="什么是开发过程最关键的因素？"><a href="#什么是开发过程最关键的因素？" class="headerlink" title="什么是开发过程最关键的因素？"></a>什么是开发过程最关键的因素？</h3><blockquote>
-<p>A: 可扩展的设计<br>B: 快<br>A: 科学的项目管理<br>B: 快<br>A: 整洁的代码<br>B: 快<br>A: 尽量保持无状态和无副作用<br>B: 快<br>A: 代码正确为第一位，运行速度快第二位<br>B: 快<br>A: YAGNI原则，DRY原则<br>B: 快<br>A: 单元测试, 行为测试，集成测试<br>B: 快<br>A: 消灭技术债<br>B: 快<br>A: 符合需求<br>B: 快<br>…<br>…<br>A: 你就不能说点别的？<br>B: 你说的这些，我都能做到，并且比你快。<br>A: …</p>
-</blockquote>
-
+          <h3 id="…-？"><a href="#…-？" class="headerlink" title="….？"></a>….？</h3>
+          <div class="read-more">
+            <a href="/2017/10/11/programm-key/" class="read-more-link">阅读更多</a>
+          </div>
         
       
     </div>
